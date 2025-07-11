@@ -25,5 +25,5 @@ This is a simple web project that generates linear gradient backgrounds using ra
 Clone the repository or download the HTML file directly:
 
 ```bash
-git clone https://github.com/your-username/projectGradient.git
-cd projectGradient
+git clone https://github.com/Priyachauhan11/Gradient-Generator.git
+cd Gradient-Generator
