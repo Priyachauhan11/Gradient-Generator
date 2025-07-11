@@ -18,8 +18,7 @@ This is a simple web project that generates linear gradient backgrounds using ra
 
 ## 📷 Preview
 
-![project preview](<img width="935" height="383" alt="image" src="https://github.com/user-attachments/assets/79d73eaa-8283-4ec2-baa6-898e2ccafd12" />
-)
+![project preview](Gradient Generator.png)
 
 ## 🚀 Getting Started
 
