@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height:100vh;
+         background-image: linear-gradient(to right top,
+            rgba(5,25,55,0.3),
+            rgba(0,77,122,0.5),
+            rgba(0,135,147,0.6),
+            rgba(0,191,114,0.7),
+            rgba(168,235,18,0.9)
+            );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+    div{
+        position: relative;
+    }
+
+    button {
+        border-radius: 2rem;
+        width: 15vh;
+        height: 5vh;
+        text-align: center;
+        align-items: center;
+        border: 10vh;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+    #myButton {
+        background-color: rgb(11, 11, 62);
+        color: #ffffff;
+        margin-right: 5vh;
+        margin-left: 20vh;
+    }
+    #myButton2 {
+        background-color: rgb(140, 237, 0);
+        color: #000;
+        margin-left: 5vh;
+    }
+    h2 {
+        color: #ffffff;
+        font-size: 15px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: 200;
+        margin-left: 20vh;
+    }
+    .copyCode {
+        width: 38vh;
+        margin-left: 20vh;
+        padding: 2vh;
+        font-size: 15px;
+        box-shadow: -5px -1px 5px 0px rgba(0,0,0,0.75);
+    }
+</style>
+<body>
+    <section>
+        <div>
+            <button id="myButton">#051937</button>
+            <button id="myButton2">#008793</button>
+        </div>
+        <h2>Copy your code here</h2>
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198))
+        </div>
+    </section>
+    <script>
+        let btn1 = document.getElementById("myButton");
+        let btn2 = document.getElementById("myButton2");
+        let copyDiv = document.querySelector(".copyCode");
+        let rgb1 = "#004773";
+        let rgb2 = "#54d542";
+        const hexValues = () => {
+            let myHexValues = "0123456789abcdef";
+            let colors = "#"
+            for(let i=0; i<6; i++){
+                colors = colors + myHexValues[Math.floor(Math.random() * 16)];   
+            }
+            return colors;
+        };
+
+        const handleButton1 = () => {
+            rgb1 = hexValues();
+            console.log(rgb1);
+            btn1.innerText = rgb1;
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+            copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        };
+
+        const handleButton2 = () => {
+            rgb2 = hexValues();
+            console.log(rgb2);
+            btn2.innerText = rgb2;
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1},${rgb2})`;
+            copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        };
+        btn1.addEventListener("click", handleButton1);
+        btn2.addEventListener("click", handleButton2);
+
+        copyDiv.addEventListener("click", () => {
+            navigator.clipboard.writeText(copyDiv.innerText);
+            window.alert("copied");
+        });
+    </script>
+</body>
+</html>
